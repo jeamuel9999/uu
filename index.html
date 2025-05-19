@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Letter Toggle</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #f9f6f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    button {
+      background-color: #6a9fb5;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin: 0 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #527a91;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .letter-container {
+      margin-top: 30px;
+      max-width: 400px;
+      background: #fffefb;
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #5a4a3e;
+      line-height: 1.5;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .letter-container.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button id="openBtn">Open Letter</button>
+    <button id="closeBtn">Close Letter</button>
+  </div>
+
+  <div id="letter" class="letter-container">
+    Goo goo loveyy, Im so proud of youu, Iloveyousomuchh
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('openBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const letter = document.getElementById('letter');
+
+    openBtn.addEventListener('click', () => {
+      letter.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      letter.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
